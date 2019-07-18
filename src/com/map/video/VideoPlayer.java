@@ -36,7 +36,7 @@ public class VideoPlayer {
 	// VLC播放器系统库的路径：C:\software\VLC
 	private static final String NATIVE_LIBRARY_SEARCH_PATH = "C:\\software\\VLC";
 	
-	public static String videoPath = "D:\\VideoExamples\\xiangyu.mp4";
+	public static String videoPath = "F:\\Remote sensing project\\videos\\除地球外, 还有哪些星球适合人类居住 科学家 这3颗最可能有生命!_高清.mp4";
     public static long currentTime;
 
 
@@ -69,7 +69,7 @@ public class VideoPlayer {
 					String options = "--subsdec-encoding=GB18030";
 					
 					//预播放视频，就是视频刚打开时默认打开的视频
-					frame.getMediaPlayer().prepareMedia("D:\\VideoExamples\\xiangyu.mp4", options);
+					frame.getMediaPlayer().prepareMedia("F:\\Remote sensing project\\videos\\除地球外, 还有哪些星球适合人类居住 科学家 这3颗最可能有生命!_高清.mp4", options);
 					frame.getMediaPlayer().toggleFullScreen();
 					
 					// 创建一个 SwingWorker 线程，用于实时调节进度
@@ -128,7 +128,7 @@ public class VideoPlayer {
 	public static void openVideo() {
 
 		// 创建文件选择器：JFileChooser
-		JFileChooser chooser = new JFileChooser();
+		JFileChooser chooser = new JFileChooser("F:\\Remote sensing project\\videos");
 		// 这里用到前面自定义的文件类型过滤器，这里取了avi，mp4，mkv，flv四种常见的视频格式，其余的文件类型都过滤掉
 		MyFileFilter filter = new MyFileFilter();
 		filter.addExtension("avi");
@@ -160,6 +160,7 @@ public class VideoPlayer {
 		int flag = videoPath.lastIndexOf(".");
 		String kuozhan = videoPath.substring(flag);
 
+		if(jf.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
 		// 这里改用了文件流
 		FileInputStream input;
 		try {
@@ -181,6 +182,7 @@ public class VideoPlayer {
 			   input.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}
 		}
 	
 	}

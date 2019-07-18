@@ -22,6 +22,16 @@ public class FileOperation {
 	static File fileFlag = new File("");
 	private int saveflag;
 
+	public String openFile(String str) {
+		JFrame frame = new JFrame();
+		frame.setAlwaysOnTop(true);
+		JFileChooser jf = new JFileChooser(str);
+		jf.showOpenDialog(frame);// 显示打开的文件对话框
+		File selectFile = jf.getSelectedFile();// 使用文件类获取选择器选择的文件
+		filepath = selectFile.getAbsolutePath();// 打开文件的路径
+		return filepath;
+	}
+	
 	public String openFile() {
 		JFrame frame = new JFrame();
 		frame.setAlwaysOnTop(true);

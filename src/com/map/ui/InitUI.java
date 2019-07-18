@@ -292,7 +292,7 @@ public class InitUI extends JFrame {
         toolBar1.add(vertical);
         toolBar1.add(horizontal);
         
-        tabbedPane.addTab("影像处理", toolBar2);
+        tabbedPane.addTab("影像显示", toolBar2);
         button8 = new JButton("加载");
         JButton button9 = new JButton("影像放大");
         JButton button10 = new JButton("影像缩小");
@@ -349,7 +349,7 @@ public class InitUI extends JFrame {
         toolBar9.add(high);
         toolBar9.add(fusion);
         
-        tabbedPane.addTab("影像拼接", toolBar10);
+        tabbedPane.addTab("拼接", toolBar10);
         picture = new JButton("图片");
         pinjie = new JButton("拼接");
         toolBar10.add(picture);
@@ -399,7 +399,7 @@ public class InitUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FileOperation file = new FileOperation();
-				rootPath = file.openFile();
+				rootPath = file.openFile("F:\\Remote sensing project\\images");
 				label.setIcon(new PictureShow(new ImageIcon(rootPath)));
 				p_4.add(label);
 				card.show(mainPane, "p4");

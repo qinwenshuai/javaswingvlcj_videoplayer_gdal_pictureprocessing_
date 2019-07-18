@@ -21,11 +21,13 @@ public class PictureCut extends JFrame implements ActionListener {
 		super("屏幕截取");
 		initWindow();
 		initOther();
-		//initTrayIcon();
+		// initTrayIcon();
 	}
+
 	private void initOther() {
 		jtp = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
 	}
+
 	private void initWindow() {
 		JPanel buttonJP = new JPanel();
 		c = new JPanel(new BorderLayout());
@@ -47,28 +49,19 @@ public class PictureCut extends JFrame implements ActionListener {
 			}
 		});
 	}
-	/*private void initTrayIcon() {
-		try {
-			SystemTray st = SystemTray.getSystemTray();
-			Image im = ImageIO.read(this.getClass().getResource("bg.gif"));
-			PopupMenu pm = new PopupMenu("弹出菜单");
-			pm.addSeparator();
-			pm.add(new MenuItem("退出程序")).addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent ae) {
-					PictureCut.this.setVisible(false);
-				}
-			});
-			TrayIcon ti = new TrayIcon(im, "JAVA屏幕截取");
-			st.add(ti);
-			ti.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent ae) {
-					PictureCut.this.setVisible(true);
-				}
-			});
-		} catch (Exception exe) {
-			exe.printStackTrace();
-		}
-	}*/
+
+	/*
+	 * private void initTrayIcon() { try { SystemTray st =
+	 * SystemTray.getSystemTray(); Image im =
+	 * ImageIO.read(this.getClass().getResource("bg.gif")); PopupMenu pm = new
+	 * PopupMenu("弹出菜单"); pm.addSeparator(); pm.add(new
+	 * MenuItem("退出程序")).addActionListener(new ActionListener() { public void
+	 * actionPerformed(ActionEvent ae) { PictureCut.this.setVisible(false); } });
+	 * TrayIcon ti = new TrayIcon(im, "JAVA屏幕截取"); st.add(ti);
+	 * ti.addActionListener(new ActionListener() { public void
+	 * actionPerformed(ActionEvent ae) { PictureCut.this.setVisible(true); } }); }
+	 * catch (Exception exe) { exe.printStackTrace(); } }
+	 */
 	private void updates() {
 		this.setVisible(true);
 		if (get != null) {
@@ -83,8 +76,10 @@ public class PictureCut extends JFrame implements ActionListener {
 			SwingUtilities.updateComponentTreeUI(c);
 		}
 	}
+
 	public void doStart() {
-		try {UIManager.setLookAndFeel(com.sun.java.swing.plaf.windows.WindowsLookAndFeel.class.getName());
+		try {
+			UIManager.setLookAndFeel(com.sun.java.swing.plaf.windows.WindowsLookAndFeel.class.getName());
 			this.setVisible(false);
 			Thread.sleep(500);// 睡500毫秒是为了让主窗完全不见
 			Robot ro = new Robot();
@@ -95,12 +90,12 @@ public class PictureCut extends JFrame implements ActionListener {
 			JFrame jf = new JFrame();
 			Temp temp = new Temp(jf, bi, di.width, di.height);
 			jf.getContentPane().add(temp, BorderLayout.CENTER);
-			//jf.setLocationRelativeTo(null);
+			// jf.setLocationRelativeTo(null);
 			jf.setUndecorated(true);
 			jf.setSize(di);
 			jf.setVisible(true);
 			jf.setAlwaysOnTop(true);
-			
+
 		} catch (Exception exe) {
 
 			exe.printStackTrace();
@@ -121,7 +116,7 @@ public class PictureCut extends JFrame implements ActionListener {
 
 			}
 
-			JFileChooser jfc = new JFileChooser(".");
+			JFileChooser jfc = new JFileChooser("F:\\Remote sensing project\\images\\cut");
 
 			jfc.addChoosableFileFilter(new GIFfilter());
 
@@ -262,7 +257,7 @@ public class PictureCut extends JFrame implements ActionListener {
 
 			save = new JButton("保存(S)");
 
-			//copy = new JButton("复制到剪帖板(C)");
+			// copy = new JButton("复制到剪帖板(C)");
 
 			close = new JButton("关闭(X)");
 
@@ -284,7 +279,7 @@ public class PictureCut extends JFrame implements ActionListener {
 
 			save.addActionListener(this);
 
-			//copy.addActionListener(this);
+			// copy.addActionListener(this);
 
 			close.addActionListener(this);
 

@@ -29,16 +29,18 @@ public class FrameTest  {
      JButton cancelbtn = new JButton("取消");
     
     public FrameTest() {
-    	
-    	jFrame.setBounds(800, 400, 300, 220);
-        c.setLayout(new BorderLayout());//布局管理器
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        init();
-        jFrame.setVisible(true);
-        jFrame.setTitle("遥感图像超分辨率重建软件系统");
-        jFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
+    	//简化登录，正式打开！
+//    	jFrame.setBounds(800, 400, 300, 220);
+//        c.setLayout(new BorderLayout());//布局管理器
+//        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         init();
+//        jFrame.setVisible(true);
+//        jFrame.setTitle("遥感图像超分辨率重建软件系统");
+//        jFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
     }
     public void init() {
+    	//正式去掉
+    	new EarthDemo();
         /*标题部分--North*/
         JPanel titlePanel = new JPanel();
         titlePanel.setLayout(new FlowLayout());
@@ -68,7 +70,7 @@ public class FrameTest  {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-					if (username.getText().contentEquals("admin") && password.getText().contentEquals("admin")) {
+					if (username.getText().contentEquals("admin") && password.getText().contentEquals("admin")) {	
 						JOptionPane.showMessageDialog(null,"登录成功！" );
 						jFrame.setVisible(false);
 						new EarthDemo();

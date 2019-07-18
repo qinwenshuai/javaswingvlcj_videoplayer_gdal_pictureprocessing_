@@ -190,10 +190,6 @@ public class MainWindow extends JPanel {
 				MainWindow.btnstart_choice.setVisible(true);
 				MainWindow.btnStop.setVisible(true);
 				SplitVideo.jmodeFrame.setVisible(true);
-				
-
-			
-
 			}	
 			});
 	
