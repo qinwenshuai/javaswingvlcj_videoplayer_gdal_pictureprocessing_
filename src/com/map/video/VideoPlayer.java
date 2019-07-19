@@ -1,6 +1,7 @@
 package com.map.video;
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -8,10 +9,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
+import javax.swing.Icon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingWorker;
+import javax.swing.filechooser.FileSystemView;
+import javax.swing.filechooser.FileView;
 
 import com.map.ui.InitUI;
 import com.map.utils.PictureConversion;
@@ -137,7 +141,7 @@ public class VideoPlayer {
 		filter.addExtension("flv");
 		filter.setDescription("视频文件");
 		chooser.setFileFilter(filter);
-		int returnVal = chooser.showOpenDialog(null);
+		int returnVal = chooser.showOpenDialog(frame);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			frame.getMediaPlayer().playMedia(chooser.getSelectedFile().getAbsolutePath());
 			videoPath = chooser.getSelectedFile().getAbsolutePath();
@@ -146,11 +150,11 @@ public class VideoPlayer {
 	
 	public static void save() throws Exception {
 		JFrame frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
 		JFileChooser jf = new JFileChooser();
 		File fileFlag = new File(videoPath);
 		jf.setCurrentDirectory(fileFlag);// 设置打开对话框的默认路径
 		jf.setSelectedFile(fileFlag);// 设置选中原来的文件
-		jf.showSaveDialog(frame);// 显示打开的文件对话框
 
 		String resavePath = jf.getSelectedFile().toString();// 另存时选择的路径
 		if (resavePath.indexOf(".") != -1) {

@@ -30,6 +30,7 @@ import com.map.utils.Harris;
 import com.map.utils.PictureConversion;
 import com.map.utils.PictureShow;
 import com.map.utils.ReadTiff;
+import com.map.video.FileMutiu2;
 import com.map.video.VideoPlayer;
 
 import gov.nasa.worldwind.BasicModel;
@@ -511,9 +512,10 @@ public class InitUI extends JFrame {
 		fusion.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {		
-				label.setIcon(new PictureShow(new ImageIcon("D:\\images\\6.jpg")));
-			    p_4.add(label);
-			    card.show(mainPane, "p4");
+//				label.setIcon(new PictureShow(new ImageIcon("D:\\images\\6.jpg")));
+//			    p_4.add(label);
+//			    card.show(mainPane, "p4");
+				new FileMutiu2("图像融合");
 			}
 		});
 		

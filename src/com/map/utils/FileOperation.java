@@ -27,6 +27,7 @@ public class FileOperation {
 		frame.setAlwaysOnTop(true);
 		JFileChooser jf = new JFileChooser(str);
 		jf.showOpenDialog(frame);// 显示打开的文件对话框
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
 		File selectFile = jf.getSelectedFile();// 使用文件类获取选择器选择的文件
 		filepath = selectFile.getAbsolutePath();// 打开文件的路径
 		return filepath;
@@ -34,6 +35,7 @@ public class FileOperation {
 	
 	public String openFile() {
 		JFrame frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
 		frame.setAlwaysOnTop(true);
 		JFileChooser jf = new JFileChooser();
 		jf.showOpenDialog(frame);// 显示打开的文件对话框
@@ -60,7 +62,6 @@ public class FileOperation {
 		fileFlag = new File(turnPath);
 		jf.setCurrentDirectory(fileFlag);// 设置打开对话框的默认路径
 		jf.setSelectedFile(fileFlag);// 设置选中原来的文件
-		jf.showSaveDialog(frame);// 显示打开的文件对话框
 		saveflag = jf.showSaveDialog(frame);
 		String resavePath = jf.getSelectedFile().toString();// 另存时选择的路径
 		if (resavePath.indexOf(".") != -1) {

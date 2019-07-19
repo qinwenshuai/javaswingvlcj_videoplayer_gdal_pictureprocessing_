@@ -1,12 +1,14 @@
 package com.map.video;
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -16,6 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.SwingWorker;
+import javax.swing.filechooser.FileSystemView;
+import javax.swing.filechooser.FileView;
 
 import org.opencv.core.Core;
 
@@ -61,6 +65,7 @@ public class SplitVideo {
 		JPanel contentPane = new JPanel();
 		contentPane.setSize(300, 300);
 		jmodeFrame.add(contentPane);
+		jmodeFrame.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
 		jmodeFrame.setVisible(true);
 
 		Box boxbase = Box.createVerticalBox(); // 水平box
@@ -354,7 +359,9 @@ public class SplitVideo {
 				JFileChooser chooser = new JFileChooser("F:\\Remote sensing project\\frame\\normal");
 				chooser.setFileSelectionMode(1);// 设定只能选择到文件夹
 				chooser.setDialogTitle("选择帧要保存的位置：");
-				int returnVal = chooser.showOpenDialog(null);
+				int returnVal = chooser.showOpenDialog(jmodeFrame);
+				
+				//this.setIconImage(Toolkit.getDefaultToolkit().getImage("images//1.png"));
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					// 获取保存位置
 					File dir = new File(
@@ -382,7 +389,7 @@ public class SplitVideo {
 				JFileChooser chooser = new JFileChooser(courseFile);
 				chooser.setFileSelectionMode(1);// 设定只能选择到文件夹
 				chooser.setDialogTitle("选择帧要保存的位置：");
-				int returnVal = chooser.showOpenDialog(null);
+				int returnVal = chooser.showOpenDialog(jmodeFrame);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					// 获取保存位置
 					imgPath = chooser.getSelectedFile().getAbsolutePath();
@@ -405,7 +412,7 @@ public class SplitVideo {
 				JFileChooser chooser = new JFileChooser(courseFile);
 				chooser.setFileSelectionMode(1);// 设定只能选择到文件夹
 				chooser.setDialogTitle("选择帧要保存的位置：");
-				int returnVal = chooser.showOpenDialog(null);
+				int returnVal = chooser.showOpenDialog(jmodeFrame);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					// 获取保存位置
 					imgPath = chooser.getSelectedFile().getAbsolutePath();
