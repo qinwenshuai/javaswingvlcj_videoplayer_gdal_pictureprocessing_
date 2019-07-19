@@ -400,7 +400,7 @@ public class InitUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FileOperation file = new FileOperation();
-				rootPath = file.openFile("F:\\Remote sensing project\\images");
+				rootPath = file.openFile("D:\\images\\open");
 				label.setIcon(new PictureShow(new ImageIcon(rootPath)));
 				p_4.add(label);
 				card.show(mainPane, "p4");
@@ -548,7 +548,7 @@ public class InitUI extends JFrame {
 		zuilinjin.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				label.setIcon(new PictureShow(new ImageIcon("D:\\images\\low.jpg")));
+				label.setIcon(new PictureShow(new ImageIcon("D:\\images\\open\\low.jpg")));
 				p_4.add(label);
 				card.show(mainPane, "p4");
 			}

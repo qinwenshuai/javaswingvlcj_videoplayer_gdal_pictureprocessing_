@@ -13,14 +13,14 @@ public class ReadTiff{
 	private String path;
 
 	public String Tiftxt()
-	{try {path = "F:\\130\\Data\\output.txt";
-		System.setOut(new PrintStream("F:\\130\\Data\\output.txt"));
+	{try {path = "D:\\images\\text\\output.txt";
+		System.setOut(new PrintStream("D:\\images\\text\\output.txt"));
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	gdal.AllRegister();
-	String rasterFilePath = "F:\\130\\Data\\G1.TIF";
+	String rasterFilePath = "D:\\images\\open\\dili.TIF";
 	Dataset dataset = gdal.Open(rasterFilePath,gdalconstConstants.GA_ReadOnly);
 	if(dataset==null)
 	{

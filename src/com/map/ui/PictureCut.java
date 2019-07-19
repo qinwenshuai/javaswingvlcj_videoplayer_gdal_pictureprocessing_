@@ -116,7 +116,7 @@ public class PictureCut extends JFrame implements ActionListener {
 
 			}
 
-			JFileChooser jfc = new JFileChooser("F:\\Remote sensing project\\images\\cut");
+			JFileChooser jfc = new JFileChooser("D:\\images\\cut");
 
 			jfc.addChoosableFileFilter(new GIFfilter());
 
