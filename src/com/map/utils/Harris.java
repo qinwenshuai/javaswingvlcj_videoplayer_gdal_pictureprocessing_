@@ -9,4 +9,5 @@ public class Harris {
 		PictureShow pictureShow = new PictureShow(new ImageIcon("D：\\images\\harristurn.jpg"));
 		return pictureShow;
 	}
+	
 }

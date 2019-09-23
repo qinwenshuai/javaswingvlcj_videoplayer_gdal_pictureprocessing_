@@ -50,4 +50,5 @@ public class ReadTiff{
 		System.out.println("旋转角度: " + transform[4]);
 		
 	return path;
-}}
+}
+	}

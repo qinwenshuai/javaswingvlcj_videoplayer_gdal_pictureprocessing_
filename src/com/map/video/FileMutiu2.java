@@ -221,5 +221,4 @@ class MyTableModel extends AbstractTableModel {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
